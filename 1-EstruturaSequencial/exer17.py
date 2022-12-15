@@ -17,13 +17,51 @@ galao = litrosDeTinta / 3.6
 lataGrande = latas * 80
 latasPequenas = latas * 25
 
+
 print('Área: ' + str(metrosQuadradados))
-print('Quantidade de tinta a ser comprada: ' + str(litrosDeTinta))
-if litrosDeTinta > 18:
-    quantidadeDeLataGrande = litrosDeTinta /18
-    resto = quantidadeDeLataGrande % 18
-    if resto > 3.6:
-        print('Latas grandes: '+str(quantidadeDeLataGrande) + ' custa R$ ' + str(quantidadeDeLataGrande * 80))
-        
-        
-print('')
+print('Quantidade de tinta a ser comprada: ' + str(round(litrosDeTinta,0)))
+
+print('\n')
+print('Para latas de 18L ')
+if litrosDeTinta % 18 != 0 :
+    latas += 1;
+    print('Quantidade de latas 18L: ' + str(round(latas,0)))
+    print('Valor R$ ' + str(round(latas,0) * 80))
+
+print('\n')
+print('Para galões de 3,6L ')
+if litrosDeTinta % 3.6 != 0 :
+    galao += 1;
+    print('Quantidade de galões 3.6L: ' + str(round(galao,0)))
+    print('Valor R$ ' + str(round(galao,0) * 25))
+print('\n')
+print('Para menor desperdício de tinta:')
+if litrosDeTinta > 10.8 and litrosDeTinta < 18:
+    print('Quantidade de tinta ' + str(litrosDeTinta) + ' comprar uma lata  de 18 litros valor de R$80,00.')
+elif litrosDeTinta <= 10.8:
+    galoes = litrosDeTinta/3.6
+    resto = litrosDeTinta % 3.6
+    if resto != 0:
+        galoes += 1
+        print('Quantidade de galo~es 3.6L: ' + str(round(galao,0)))
+        print('Valor R$ ' + str(round(galao,0) * 25))
+    else:
+        print('Quantidade de galo~es 3.6L: ' + str(round(galao,0)))
+        print('Valor R$ ' + str(round(galao,0) * 25))
+elif litrosDeTinta > 18:
+    latas = litrosDeTinta / 18
+    resto = litrosDeTinta % 18
+    if resto > 10.8:
+        latas +=1
+        print('Quantidade de latas 18L: ' + str(round(latas,0)))
+        print('Valor R$ ' + str(round(latas,0) * 80))
+    elif resto < 10.8:
+        galoes = litrosDeTinta/3.6
+    resto = litrosDeTinta % 3.6
+    if resto != 0:
+        galoes += 1
+        print('Quantidade de galo~es 3.6L: ' + str(round(galao,0)))
+        print('Valor R$ ' + str(round(galao,0) * 25))
+    else:
+        print('Quantidade de galo~es 3.6L: ' + str(round(galao,0)))
+        print('Valor R$ ' + str(round(galao,0) * 25))
