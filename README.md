@@ -1,1 +1,1 @@
-# Exercicios_Python_Brasil
+# Exercicios_Python
